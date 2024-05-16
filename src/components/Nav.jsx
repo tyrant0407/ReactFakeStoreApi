@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../utils/Context';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Nav = () => {
    const [products] = useContext(ProductContext);
+ 
    let distint_category = products && products.reduce((acc,cv)=>[...acc,cv.category],[]);
    distint_category=[...new Set(distint_category)];
-   console.log(distint_category);
+
 
    const color=()=>{
     return `rgba(${(Math.random()*255).toFixed()},${(Math.random()*255).toFixed()},${(Math.random()*255).toFixed()},0.4)`
